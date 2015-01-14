@@ -1,0 +1,28 @@
+diff --git a/ino/commands/build.py b/ino/commands/build.py
+index 76802c1..cb53df9 100644
+--- a/ino/commands/build.py
++++ b/ino/commands/build.py
+@@ -159,7 +159,7 @@ class Build(Command):
+                 }
+             },
+             'sam': {
+-                'dirname': 'g++_arm_none_eabi',
++                'dirname': 'gcc-arm-none-eabi-4.8.3-2014q1',
+                 'tool_prefix': 'arm-none-eabi-',
+                 'tools': {
+                     'cc': 'gcc',
+diff --git a/ino/commands/upload.py b/ino/commands/upload.py
+index ebd62ae..55c1cc0 100644
+--- a/ino/commands/upload.py
++++ b/ino/commands/upload.py
+@@ -46,8 +46,8 @@ class Upload(Command):
+                                   str(platform_settings['sam']['tools']['bossac']['cmd'])))
+ 
+         if platform.system() == 'Linux':
+-            tools.append(platform_settings['avr']['tools']['avrdude']['cmd']['path']['linux'])
+-            tools.append(platform_settings['avr']['tools']['avrdude']['config']['path']['linux'])
++            tools.append(platform_settings['avr']['tools']['avrdude']['cmd']['path'])
++            tools.append(platform_settings['avr']['tools']['avrdude']['config']['path'])
+         else:
+             tools.append(str(platform_settings['avr']['tools']['avrdude']['cmd']['path']))
+             tools.append(str(platform_settings['avr']['tools']['avrdude']['config']['path']))

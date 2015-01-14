@@ -1,0 +1,10 @@
+needs arduino 1.5.8
+
+1. download arduino-1.5.8 and move it to {arduino-1.5.8_dir}
+2. copy boards.txt to {arduino-1.5.8_dir}/hardware/arduino/avr/
+3. create symlink to arduino: sudo ln -s {arduino-1.5.8_dir} /usr/share/arduino
+
+1. clone https://github.com/justonia/ino.git
+2. git checkout ide1.5x'
+3. git apply --ignore-space-change --ignore-whitespace patch
+4. sudo make install
